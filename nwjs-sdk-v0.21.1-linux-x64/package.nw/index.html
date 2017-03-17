@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script>// Get the current window
+var win = nw.Window.get();
+
+// Create a new window and get it
+nw.Window.open('https://localhost:8443/#/', {
+	  position: 'center',
+  width: 901,
+  height: 600}, function(new_win) {
+// And listen to new window's focus event
+new_win.on('focus', function() {
+console.log('New window is focused');
+
+});
+
+});
+</script>
