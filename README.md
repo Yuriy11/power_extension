@@ -1,14 +1,40 @@
-1. Prerequisite software
-1.1. You need kurento media server to be install and service to be launched, guide here:
-http://doc-kurento.readthedocs.io/en/stable/installation_guide.html
-2. Create work work folder
-Ubuntu ex: 
-sudo mkdir power_ext
-cd power_ext
-3. Download and extract here nw.js sdk ver 0.21.2(website https://nwjs.io/) 
-4. Clone this repo.
-5. Execute :
-5.1. sudo ./kurento-room/kurento-room-demo/target/kurento-room-demo-6.6.0/bin/start.sh 
-5.2. sudo ./nwjs-sdk-v0.21.1-linux-x64/nw
+# extension
+
+PoWeR team extension is stred in this reporistory.
+
+
+Steps to execte:
+
+1. Install Kurento media server at your server:
+http://doc-kurento.readthedocs.io/en/latest/user/installation.html
+2. At the same machine you should run 2 java applications:
+2.1. kurento-qos
+It is build for maven, command to execute 
+sudo mvn compile exec:java
+2.2. kurento-recording
+It is build for maven, command to execute 
+sudo mvn compile exec:java
+
+The most important files here are:
+1) index.js
+index js allows you to edit WebRTC constraints such as:
+framerate, video width, video height, etc.
+There is a perfect website, which shows how to form minimal constraints:
+https://webrtc.github.io/samples/src/content/peerconnection/constraints/
+
+
+You can read a lot more about kurento platform at this link:
+
+http://doc-kurento.readthedocs.io/en/latest/index.html
+
+3. In this repository is also held templeate folder for Monroe container
+for minimal functionality you should edit index.html file before
+It is nacessary to change server address.
+
+After all this operations it is possible to run container.
+
+There is an alternative for v4l2loopback and ffmpeg:
+google-chrome argument which was created to test getUserMedia() function for developers.
+https://testrtc.com/y4m-video-chrome/
 
 
